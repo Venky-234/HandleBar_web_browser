@@ -1,0 +1,88 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "debug_build",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/MTd",
+				"/MP",
+				"/I./cef_binaries",
+				"/I./SDL/include",
+				"/I./imgui",
+				"/Fedebug_build/handlebar.exe",
+				"/std:c++17",
+				"main.cpp",
+				"OSRRenderHandler.cpp",
+				"OSRClient.cpp",
+				"HandleBarApp.cpp",
+				"./imgui/backends/imgui_impl_sdlrenderer3.cpp",
+				"./imgui/backends/imgui_impl_sdl3.cpp",
+				"./imgui/imgui.cpp",
+				"./imgui/imgui_demo.cpp",
+				"./imgui/imgui_draw.cpp",
+				"./imgui/imgui_tables.cpp",
+				"./imgui/imgui_widgets.cpp",
+				"libcef.lib",
+				"libcef_dll_wrapper.lib",
+				"SDL3.lib",
+				"user32.lib"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "shell",
+			"label": "release build",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/MTr",
+				"/MP",
+				"/O2",
+				"/I./cef_binaries",
+				"/I./SDL/include",
+				"/I./imgui",
+				"/Ferelease_build/handlebar.exe",
+				"/std:c++17",
+				"main.cpp",
+				"OSRRenderHandler.cpp",
+				"OSRClient.cpp",
+				"HandleBarApp.cpp",
+				"./imgui/backends/imgui_impl_sdlrenderer3.cpp",
+				"./imgui/backends/imgui_impl_sdl3.cpp",
+				"./imgui/imgui.cpp",
+				"./imgui/imgui_demo.cpp",
+				"./imgui/imgui_draw.cpp",
+				"./imgui/imgui_tables.cpp",
+				"./imgui/imgui_widgets.cpp",
+				"./cef_binaries/Release/libcef.lib",
+				"./release_build/libcef_dll_wrapper.lib",
+				"./release_build/SDL3.lib",
+				"user32.lib"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+			},
+			"detail": "compiler: cl.exe"
+		}
+	]
+}

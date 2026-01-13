@@ -1,0 +1,13 @@
+.idea/
+cef_binaries/
+imgui/
+release_build/
+debug_build/
+SDL/
+libcef_dll_wrapper.lib
+libcef.lib
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
